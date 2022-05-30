@@ -1,0 +1,29 @@
+{
+    "name": "scraping_integrated_report_in_japan",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "..",
+        "args": {
+            "VARIANT": "3.10.4-bullseye",
+            "USERNAME": "vscode",
+            "USE_UID": "1000",
+            "USE_GID": "1000",
+        }
+    },
+    "settings": {
+        "terminal.integrated.profiles.linux": {
+            "bash": {
+                "path": "/bin/bash",
+                "args": [
+                    "-l"
+                ]
+            }
+        }
+    },
+    "extensions": [
+        "ms-python.python",
+        "VisualStudioExptTeam.vscodeintellicode"
+    ],
+    "remoteUser": "vscode",
+    "postCreateCommand": "./.devcontainer/postCreateCommand.sh",
+}
